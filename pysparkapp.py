@@ -5,7 +5,7 @@ from pyspark.streaming.kafka import KafkaUtils
 #    json parsing (necessary for twitter data)
 import json
 
-sc = SparkContext("k8s://https://kubernetes.default.svc.cluster.local:443", appName="PySparkShell")
+#sc = SparkContext("k8s://https://kubernetes.default.svc.cluster.local:443", appName="PySparkShell")
 ssc = StreamingContext(sc, 60)
 
 kafkaStream = KafkaUtils.createStream(ssc, 'topics.yokicloud.com:9094', 'PySparkShell', {'topic-name':1})
